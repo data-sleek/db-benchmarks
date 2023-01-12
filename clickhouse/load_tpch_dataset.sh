@@ -30,7 +30,7 @@ done
 for i in "${array[@]}"
 do
 log "Clearing table ${i}"
-clickhouse-client --password Tibeun1111 --query="truncate table tpch.${i} "
+clickhouse-client --password xxxx --query="truncate table tpch.${i} "
 log "- - - -"
 done
 
@@ -38,7 +38,7 @@ done
 for i in "${array[@]}"
 do
 log "Loading ${i}.tbl..."
-clickhouse-client --password Tibeun1111 --format_csv_delimiter="|" --query="INSERT INTO tpch.${i} FORMAT CSV" < ${targetdir}/${i}.tbl
+clickhouse-client --password xxxx --format_csv_delimiter="|" --query="INSERT INTO tpch.${i} FORMAT CSV" < ${targetdir}/${i}.tbl
 log "Done Loading ${i}.tbl..."
 done
 
@@ -46,7 +46,7 @@ done
  for i in "${array[@]}"
 do
 log "Clearing table ${i}"
-clickhouse-client --password Tibeun1111 --query="select count(*) from tpch.${i} "
+clickhouse-client --password xxxx --query="select count(*) from tpch.${i} "
 log "- - - -"
 done
 

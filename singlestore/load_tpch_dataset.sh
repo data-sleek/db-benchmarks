@@ -30,7 +30,7 @@ done
 for i in "${array[@]}"
 do
 log "Loading ${i}.tbl..."
-memsql -uroot -pTibeun1111 tpch -e"LOAD DATA INFILE '${targetdir}/${i}.tbl' INTO TABLE tpch.${i} FIELDS TERMINATED BY '|' LINES TERMINATED BY '|\n';"
+memsql -uroot -pxxxx tpch -e"LOAD DATA INFILE '${targetdir}/${i}.tbl' INTO TABLE tpch.${i} FIELDS TERMINATED BY '|' LINES TERMINATED BY '|\n';"
 log "Done Loading ${i}.tbl..."
 done
 
@@ -38,9 +38,9 @@ done
  for i in "${array[@]}"
 do
 log "Clearing table ${i}"
-memsql -uroot -pTibeun1111 -e"select count(*) from tpch.${i};"
+memsql -uroot -pxxxx -e"select count(*) from tpch.${i};"
 log "- - - -"
 done
 
  
-memsql -uroot -pTibeun1111 -e"show databases"
+memsql -uroot -pxxxx -e"show databases"
